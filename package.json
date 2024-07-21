@@ -1,0 +1,37 @@
+{
+  "name": "procex",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^7",
+    "express": "^4",
+    "@sap/cds-hana": "^2",
+    "@sap/hana-client": "^2.21.28",
+    "@sap/hdi-deploy":"^5.2.0",
+    "@sap/hdbext": "^8.0.6",
+    "sap-hdbext-promisfied": "^2.202407.1"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7",
+    "@sap/eslint-plugin-cds": "^3",
+    "eslint": "^9"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "hana": "node node_modules/@sap/hdi-deploy/deploy.js --root ./gen/db --auto-undeploy --exit"
+  },
+  "cds": {
+    "requires": {
+      "db":{
+        "kind":"hana"
+      }
+    },
+    "hana":{
+      "deploy-format":"hdbtable"
+    }
+  }
+}

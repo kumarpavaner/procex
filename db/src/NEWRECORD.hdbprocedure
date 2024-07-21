@@ -1,0 +1,20 @@
+PROCEDURE "NEWRECORD"(out result "MY_BOOKSHOP_BOOKS")
+    LANGUAGE SQLSCRIPT
+    SQL SECURITY INVOKER
+    -- DEFAULT SCHEMA <default_schema_name>
+
+AS 
+BEGIN
+    DECLARE vId INTEGER;
+    DECLARE vTitle NVARCHAR(5000);
+    DECLARE vStock INTEGER;
+
+    SELECT LPAD(ROUND((RAND() * 1000000),0),7,'0000000') into vId from dummy;
+    SELECT LPAD(ROUND((RAND() * 1000000),0),7,'0000000') into vTitle from dummy;
+    SELECT LPAD(ROUND((RAND() * 1000000),0),7,'0000000') into vStock from dummy;
+
+    INSERT INTO "MY_BOOKSHOP_BOOKS"("ID","TITLE","STOCK")
+            VALUES(vId,vTitle,vStock);
+
+    result = SELECT * FROM "MY_BOOKSHOP_BOOKS" where ID = :vId;
+END 
