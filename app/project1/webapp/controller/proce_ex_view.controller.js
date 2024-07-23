@@ -21,33 +21,8 @@ function (Controller) {
                 console.log(data); // depending on your response targert your desired property.
             }
             
-        },
-
-        onPressBtn3: function () {
-            
-            return new Promise((resolve, reject) => { 
-
-                //const sender = this.getView().byId('sender').getSelectedItem().getKey();
-                const oActionODataContextBinding = this.oDataModel.bindContext("/addRandomBook()");
-                //oActionODataContextBinding.setParameter("sender", sender);
-                oActionODataContextBinding.execute().then(()=> {
-                    //const oActionContext = oActionODataContextBinding.getBoundContext();
-                    //console.log(oActionContext.getObject());
-                    MessageToast.show("Record added successfully!")                
-                    resolve();
-                });        });
-            
-        },
-
-        onPressBtn2: function () {
-            
-            this.getView().bindElement("/Books");
-            const bindingContext = this.getView();
-
-            const oAction = this.getView().getModel().bindContext( "my.bookshop.srv.CatalogService.addRandomBook()", bindingContext );
-
-            
-            console.log(oAction);
         }
+
+
     });
 });
