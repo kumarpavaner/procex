@@ -1,0 +1,9 @@
+<mvc:View controllerName="ex.project1.controller.proce_ex_view"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+        <Button id="testbtn" text="Fire" press="onPressBtn"></Button>
+                </content>
+    </Page>
+</mvc:View>

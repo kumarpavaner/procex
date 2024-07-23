@@ -7,31 +7,37 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^7",
-    "express": "^4",
     "@sap/cds-hana": "^2",
     "@sap/hana-client": "^2.21.28",
-    "@sap/hdi-deploy":"^5.2.0",
     "@sap/hdbext": "^8.0.6",
+    "@sap/hdi-deploy": "^5.2.0",
+    "express": "^4",
     "sap-hdbext-promisfied": "^2.202407.1"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
     "@sap/cds-dk": "^7",
     "@sap/eslint-plugin-cds": "^3",
-    "eslint": "^9"
+    "@sap/ux-specification": "^1.120.14",
+    "eslint": "^9",
+    "rimraf": "^5.0.5"
   },
   "scripts": {
     "start": "cds-serve",
-    "hana": "node node_modules/@sap/hdi-deploy/deploy.js --root ./gen/db --auto-undeploy --exit"
+    "hana": "node node_modules/@sap/hdi-deploy/deploy.js --root ./gen/db --auto-undeploy --exit",
+    "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false",
+    "undeploy": "cf undeploy procex --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
   },
   "cds": {
     "requires": {
-      "db":{
-        "kind":"hana"
+      "db": {
+        "kind": "hana"
       }
     },
-    "hana":{
-      "deploy-format":"hdbtable"
+    "hana": {
+      "deploy-format": "hdbtable"
     }
   }
 }
