@@ -1,9 +1,56 @@
 <mvc:View controllerName="ex.project1.controller.proce_ex_view"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"  displayBlock="true"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
         <content>
-        <Button id="testbtn" text="Fire" press="onPressBtn"></Button>
-                </content>
+        <Button id="testbtn" text="Add" press="onPressBtn"></Button>
+
+        <Table id="idProductsTable"
+		        inset="false"
+		        items="{
+			        path: '/Books',
+			        sorter: {
+				        path: 'ID'
+			        }
+		        }">
+        
+        <columns>
+			<Column id="prd2"
+				width="12em">
+
+        	</Column>
+			<Column id="prd"
+				width="12em">
+				<Text id="txtprd" text="Id" />
+			</Column>
+			<Column id="spr"
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text id="txtspr" text="Title" />
+			</Column>
+			<Column id="dim"
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="End">
+				<Text id="txtdim" text="Stock" />
+			</Column>
+        </columns>
+
+		<items>
+			<ColumnListItem id="idclmlist" vAlign="Middle">
+				<cells>
+                    <Button id="testbtn2" text="delete" press="onPressBtn2"></Button>
+					<ObjectIdentifier id="idobjid"
+						title="{ID}"/>
+					<Text id="txtsprnam"
+						text="{TITLE}" />
+					<Text id="idwid"
+						text="{STOCK}" />
+				</cells>
+			</ColumnListItem>
+		</items>
+        </Table>
+
+        </content>
     </Page>
 </mvc:View>
