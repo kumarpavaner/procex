@@ -1,0 +1,14 @@
+PROCEDURE "DELETEALL"(out result "MY_BOOKSHOP_BOOKS")
+    LANGUAGE SQLSCRIPT
+    SQL SECURITY INVOKER
+    -- DEFAULT SCHEMA <default_schema_name>
+
+AS 
+BEGIN
+
+
+    DELETE FROM "MY_BOOKSHOP_BOOKS";
+            
+
+    result = SELECT * FROM "MY_BOOKSHOP_BOOKS" ;
+END 

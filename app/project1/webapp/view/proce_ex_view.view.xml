@@ -4,6 +4,7 @@
     <Page id="page" title="{i18n>title}">
         <content>
         <Button id="testbtn" text="Add" press="onPressBtn"></Button>
+                <Button id="testbtn3" text="Delete All" press="onPressBtn2"></Button>
 
         <Table id="idProductsTable"
 		        inset="false"
