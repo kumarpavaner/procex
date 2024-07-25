@@ -9,7 +9,7 @@
         <Table id="idProductsTable"
 		        inset="false"
 		        items="{
-			        path: '/Books',
+			        path: 'oBookModel>/Books',
 			        sorter: {
 				        path: 'ID'
 			        }
@@ -18,7 +18,7 @@
 		<headerToolbar>
 			<OverflowToolbar id="idtlbr">
 				<content>
-					<Title id="titlle" text="Row Count: {/Books/$count}" level="H2"/>
+					<Title id="titlle" text="Row Count: {oBookModel>/Books/$count}" level="H2"/>
 
 				</content>
 			</OverflowToolbar>
@@ -56,11 +56,11 @@
                     <Button id="testbtn2" text="delete" press="onPressBtn3"></Button>
 					<Button id="testbtn5" text="update" press="updateDailog"></Button>
 					<ObjectIdentifier id="idobjid"
-						title="{ID}"/>
+						title="{oBookModel>ID}"/>
 					<Text id="txtsprnam"
-						text="{TITLE}" />
+						text="{oBookModel>TITLE}" />
 					<Text id="idwid"
-						text="{STOCK}" />
+						text="{oBookModel>STOCK}" />
 				</cells>
 			</ColumnListItem>
 		</items>

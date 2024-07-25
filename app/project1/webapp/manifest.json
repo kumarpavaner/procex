@@ -68,9 +68,9 @@
           "bundleName": "ex.project1.i18n.i18n"
         }
       },
-      "": {
+      "oBookModel": {
         "dataSource": "mainService",
-        "preload": true,
+        "preload": false,
         "settings": {
           "operationMode": "Server",
           "autoExpandSelect": true,

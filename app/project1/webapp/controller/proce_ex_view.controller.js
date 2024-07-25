@@ -46,7 +46,7 @@ function (Controller, HorizontalLayout, VerticalLayout, Dialog, Button, Label, m
 
             request.onload = async function () {
                 var data = JSON.parse(this.response);
-                oThis.getView().byId("idProductsTable").getModel().refresh();
+                oThis.getView().byId("idProductsTable").getModel("oBookModel").refresh();
                 console.log(data); // depending on your response targert your desired property.
             }
 
@@ -61,7 +61,7 @@ function (Controller, HorizontalLayout, VerticalLayout, Dialog, Button, Label, m
 
             request.onload = async function () {
                 var data = JSON.parse(this.response);
-                oThis.getView().byId("idProductsTable").getModel().refresh();
+                oThis.getView().byId("idProductsTable").getModel("oBookModel").refresh();
                 console.log(data); // depending on your response targert your desired property.
             }
 
@@ -80,7 +80,7 @@ function (Controller, HorizontalLayout, VerticalLayout, Dialog, Button, Label, m
 
             request.onload = async function () {
                 var data = JSON.parse(this.response);
-                oThis.getView().byId("idProductsTable").getModel().refresh();
+                oThis.getView().byId("idProductsTable").getModel("oBookModel").refresh();
                 console.log(data); // depending on your response targert your desired property.
             }
 
@@ -158,7 +158,7 @@ function (Controller, HorizontalLayout, VerticalLayout, Dialog, Button, Label, m
 
             request.onload = async function () {
                 var data = JSON.parse(this.response);
-                oThis.getView().byId("idProductsTable").getModel().refresh();
+                oThis.getView().byId("idProductsTable").getModel("oBookModel").refresh();
                 console.log(data); // depending on your response targert your desired property.
             }
 
@@ -239,7 +239,7 @@ function (Controller, HorizontalLayout, VerticalLayout, Dialog, Button, Label, m
 
             request.onload = async function () {
                 var data = JSON.parse(this.response);
-                oThis.getView().byId("idProductsTable").getModel().refresh();
+                oThis.getView().byId("idProductsTable").getModel("oBookModel").refresh();
                 console.log(data); // depending on your response targert your desired property.
             }
 
