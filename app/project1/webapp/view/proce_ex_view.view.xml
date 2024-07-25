@@ -3,9 +3,9 @@
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
         <content>
-        <Button id="testbtn" text="Add" press="onPressBtn"></Button>
+        <Button id="testbtn" text="Create Random Values" press="onPressBtn"></Button>
                 <Button id="testbtn3" text="Delete All" press="onPressBtn2"></Button>
-
+        <Button id="testbtn4" text="Create" press="createDailog"></Button>
         <Table id="idProductsTable"
 		        inset="false"
 		        items="{
@@ -18,7 +18,7 @@
 		<headerToolbar>
 			<OverflowToolbar id="idtlbr">
 				<content>
-					<Title id="titlle" text="{/Books/$count}" level="H2"/>
+					<Title id="titlle" text="Row Count: {/Books/$count}" level="H2"/>
 
 				</content>
 			</OverflowToolbar>
@@ -26,6 +26,10 @@
 
         <columns>
 			<Column id="prd2"
+				width="12em">
+
+        	</Column>
+			<Column id="prd3"
 				width="12em">
 
         	</Column>
@@ -49,7 +53,8 @@
 		<items>
 			<ColumnListItem id="idclmlist" vAlign="Middle">
 				<cells>
-                    <Button id="testbtn2" text="delete" press="onPressBtn2"></Button>
+                    <Button id="testbtn2" text="delete" press="onPressBtn3"></Button>
+					<Button id="testbtn5" text="update" press="updateDailog"></Button>
 					<ObjectIdentifier id="idobjid"
 						title="{ID}"/>
 					<Text id="txtsprnam"
