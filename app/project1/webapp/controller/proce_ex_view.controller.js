@@ -70,7 +70,7 @@ function (Controller, HorizontalLayout, VerticalLayout, Dialog, Button, Label, m
 
         onPressBtn3: function (oEvent) {
             var oThis = this;
-            var ID = oEvent.getSource().getBindingContext().getObject().ID;
+            var ID = oEvent.getSource().getBindingContext("oBookModel").getObject().ID;
             var params = { 'ID':ID };
 
             var request = new XMLHttpRequest(); // Create a request variable and assign a new XMLHttpRequest object to it.
@@ -217,9 +217,9 @@ function (Controller, HorizontalLayout, VerticalLayout, Dialog, Button, Label, m
 				});
 			}
 
-            sap.ui.getCore().byId("idcr4").setValue(oEvent.getSource().getBindingContext().getObject().ID);
-            sap.ui.getCore().byId("idcr5").setValue(oEvent.getSource().getBindingContext().getObject().TITLE);
-            sap.ui.getCore().byId("idcr6").setValue(oEvent.getSource().getBindingContext().getObject().STOCK);
+            sap.ui.getCore().byId("idcr4").setValue(oEvent.getSource().getBindingContext("oBookModel").getObject().ID);
+            sap.ui.getCore().byId("idcr5").setValue(oEvent.getSource().getBindingContext("oBookModel").getObject().TITLE);
+            sap.ui.getCore().byId("idcr6").setValue(oEvent.getSource().getBindingContext("oBookModel").getObject().STOCK);
 
 			this.oUpdateDialog.open();
 
